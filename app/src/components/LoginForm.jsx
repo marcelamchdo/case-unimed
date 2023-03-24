@@ -1,20 +1,16 @@
 import React,{useState, } from 'react';
+import { validate } from 'email-validator';
 
 const LoginForm = () => {
-  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  function handleUsernameChange(e){
-    setUsername(e.target.value)
-  }
+  const enabled = () => password.length > 5 && validate(email)
 
-  function handlePasswordChange(e) {
-    setPassword(e.target.value)
-  }
-
-  function handleSubmit(e) {
+  const handleSubmit = (e) => {
     e.preventDefault()
   }
+
 
   return (
     <div>
@@ -26,9 +22,9 @@ const LoginForm = () => {
         <input
           type="text"
           id="username"
-          value={username}
+          value={email}
           placeholder="Informe seu e-mail"
-          onChange={handleUsernameChange}
+          onChange={({target}) => setEmail(target.value)}
         />
 
         <label htmlFor="password">
@@ -40,10 +36,13 @@ const LoginForm = () => {
           id="password"
           value={password}
           placeholder="Informe sua senha"
-          onChange={handlePasswordChange}
+          onChange={({target}) => setPassword(target.value)}
         />
 
-        <button type="submit">
+        <button 
+          type="button"
+          disabled={!enabled()}
+        >
           Entrar
         </button>
 
