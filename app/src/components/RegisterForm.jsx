@@ -5,8 +5,9 @@ const RegisterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [checkPassword, setCheckPassword] = useState('');
 
-  const enabled = () => password.length > 5 && validate(email)
+  const enabled = () => name.length > 3 && password.length > 5 && validate(email) && password === checkPassword
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -58,9 +59,9 @@ const RegisterForm = () => {
         <input
           type="password"
           id="password"
-          value={password}
+          value={checkPassword}
           placeholder="Informe sua senha"
-          onChange={({target}) => setPassword(target.value)}
+          onChange={({target}) => setCheckPassword(target.value)}
         />
 
         <button 
