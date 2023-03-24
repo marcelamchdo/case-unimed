@@ -1,0 +1,19 @@
+.login {
+  display: flex;
+  flex-direction: row;
+}
+
+.background {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+}
+
+.loginForm {
+  position: absolute;
+  width: 50%;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+}

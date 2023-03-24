@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
+import './styles/LoginForm.scss';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -14,8 +15,10 @@ const LoginForm = () => {
   }
 
   return (
-    <div>
+    <div className='Form'>
       <form onSubmit={handleSubmit}>
+        <h1>Login</h1>
+        
         <label htmlFor="email">
           E-mail
         </label>
