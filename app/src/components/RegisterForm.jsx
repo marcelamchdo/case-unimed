@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
+import '../styles/Form.scss';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -9,7 +10,6 @@ const RegisterForm = () => {
   const [checkPassword, setCheckPassword] = useState('');
   
   const history = useHistory();
-
 
   const enabled = () => name.length > 3 && password.length > 5 && validate(email) && password === checkPassword
 
@@ -25,7 +25,7 @@ const RegisterForm = () => {
 
 
   return (
-    <div>
+    <div className='Form'>
       <form onSubmit={handleSubmit}>
         <label htmlFor="nome">
         Nome
@@ -76,7 +76,6 @@ const RegisterForm = () => {
         />
 
         <button
-          data-testid='myid'
           type="button"
           disabled={!enabled()}
           
