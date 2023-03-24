@@ -33,5 +33,11 @@ describe('LoginForm', () => {
     fireEvent.change(usernameInput, { target: { value: 'example@example.com' } });
     fireEvent.change(passwordInput, { target: { value: 'password123' } });
     expect(submitButton).toBeEnabled()
+  });
+
+  it('verify Não tenho conta button is always enabled', () => {
+    render(<LoginForm/>);
+    const submitButton = screen.getByText('Não tenho conta');
+    expect(submitButton).toBeEnabled()
   })
 });
