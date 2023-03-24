@@ -7,14 +7,22 @@ const RegisterForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [checkPassword, setCheckPassword] = useState('');
+  
   const history = useHistory();
 
 
   const enabled = () => name.length > 3 && password.length > 5 && validate(email) && password === checkPassword
 
   const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+    e.preventDefault();
+
+    // Check if the form is valid
+    if (enabled()) {
+      // Navigate to the home page
+      history.push('/');
+    }
+  };
+
 
   return (
     <div>
@@ -67,9 +75,11 @@ const RegisterForm = () => {
           onChange={({target}) => setCheckPassword(target.value)}
         />
 
-        <button 
+        <button
+          data-testid='myid'
           type="button"
           disabled={!enabled()}
+          
           onClick={() => history.push('/')}
         >
           Cadastrar

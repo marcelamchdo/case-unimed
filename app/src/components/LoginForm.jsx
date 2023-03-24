@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
-import './styles/LoginForm.scss';
+import '../styles/Form.scss';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -25,7 +25,7 @@ const LoginForm = () => {
 
         <input
           type="text"
-          id="username"
+          id="email"
           value={email}
           placeholder="Informe seu e-mail"
           onChange={({target}) => setEmail(target.value)}
