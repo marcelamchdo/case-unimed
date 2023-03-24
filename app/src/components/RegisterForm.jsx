@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import { validate } from 'email-validator';
+import { useHistory } from 'react-router-dom';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [checkPassword, setCheckPassword] = useState('');
+  const history = useHistory();
+
 
   const enabled = () => name.length > 3 && password.length > 5 && validate(email) && password === checkPassword
 
@@ -67,6 +70,7 @@ const RegisterForm = () => {
         <button 
           type="button"
           disabled={!enabled()}
+          onClick={() => console.log(history)}
         >
           Cadastrar
         </button>
