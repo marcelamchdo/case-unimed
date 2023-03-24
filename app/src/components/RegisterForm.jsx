@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
 import '../styles/Form.scss';
+import { useDispatch } from 'react-redux';
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [checkPassword, setCheckPassword] = useState('');
-  
+  const [checkPassword, setCheckPassword] = useState(''); 
+  const dispatch = useDispatch();
   const history = useHistory();
 
   const enabled = () => name.length > 3 && password.length > 5 && validate(email) && password === checkPassword
@@ -22,6 +23,11 @@ const RegisterForm = () => {
       history.push('/');
     }
   };
+
+  const handleClick = () => {
+    dispatch({type: 'SIGNUP', payload: 'Usuário cadastrado com sucesso!'})
+    history.push('/')
+  }
 
 
   return (
@@ -78,8 +84,7 @@ const RegisterForm = () => {
         <button
           type="button"
           disabled={!enabled()}
-          
-          onClick={() => history.push('/')}
+          onClick={handleClick}
         >
           Cadastrar
         </button>

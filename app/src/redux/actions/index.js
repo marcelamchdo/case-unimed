@@ -4,3 +4,4 @@ export const signupAction = (payload) => ({
   type: SIGNUP,
   payload: payload
 })
+
