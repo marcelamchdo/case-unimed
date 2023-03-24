@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { validate } from 'email-validator';
+import { useHistory } from 'react-router-dom';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const history = useHistory();
 
   const enabled = () => password.length > 5 && validate(email)
 
@@ -45,7 +47,10 @@ const LoginForm = () => {
           Entrar
         </button>
 
-        <button type="submit">
+        <button 
+        type="button"
+        onClick={() => history.push('/register')}
+        >
           Não tenho conta
         </button>
       </form>

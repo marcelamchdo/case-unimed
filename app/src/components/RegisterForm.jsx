@@ -61,7 +61,7 @@ const RegisterForm = () => {
 
         <input
           type="password"
-          id="password"
+          id="checkPassword"
           value={checkPassword}
           placeholder="Informe sua senha"
           onChange={({target}) => setCheckPassword(target.value)}
@@ -70,12 +70,15 @@ const RegisterForm = () => {
         <button 
           type="button"
           disabled={!enabled()}
-          onClick={() => console.log(history)}
+          onClick={() => history.push('/')}
         >
           Cadastrar
         </button>
 
-        <button type="submit">
+        <button 
+        type="button"
+        onClick={() => history.push('/')}
+        >
           Voltar
         </button>
       </form>
