@@ -12,10 +12,9 @@ const LoginForm = () => {
   const history = useHistory();
   const message = useSelector(state => state.user.message)
   const enabled = () => password.length > 5 && validate(email)
-
   const handleHistory = () => {
     if(history !== undefined){
-      history.push('/admin')}
+      history.push('/welcome')}
     }
 
   return (

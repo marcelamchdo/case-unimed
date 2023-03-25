@@ -1,5 +1,7 @@
 import unimed from '../images/logo_unimed.png';
 import '../styles/SidebarAdmin.scss';
+import { Link } from 'react-router-dom';
+
 const Sidebar = () => {
   return (
     <div className="Sidebar">
@@ -7,9 +9,9 @@ const Sidebar = () => {
 
     <div>
       <ul>
-        <li>Home</li>
-        <li>Usuários</li>
-        <li>Sair</li>
+        <li><Link to= "/welcome">Home</Link></li>
+        <li><Link to= "/admin">Usuários</Link></li>
+        <li><Link to= "/">Sair</Link></li>
       </ul>
     </div>
 

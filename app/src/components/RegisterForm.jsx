@@ -3,8 +3,7 @@ import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
 import '../styles/Form.scss';
 import { useDispatch } from 'react-redux';
-import valid from '../images/svgs/valid'
-import invalid from '../images/svgs/invalid'
+import { valid, invalid } from '../images/svgs'
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -14,7 +13,7 @@ const RegisterForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
-  const sendToReducer = {name, email};
+  const sendToReducer = {name, email, message: 'Usuário cadastrado com sucesso!'};
   const enabled = () => name.length > 3 && validate(email) && password === checkPassword;
 
   const handleSubmit = () => {
@@ -24,8 +23,7 @@ const RegisterForm = () => {
   };
 
   const handleClick = () => {
-    dispatch({type: 'SIGNUP', payload: 'Usuário cadastrado com sucesso!'})
-    dispatch({type: 'LOGIN', payload: sendToReducer})
+    dispatch({type: 'SIGNUP', payload: sendToReducer})
     history.push('/')
   }
 
@@ -47,7 +45,6 @@ const RegisterForm = () => {
             value={name}
             placeholder="Informe seu nome"
             onChange={({target}) => setName(target.value)}
-            // onBlur={validateName}
           />
           <span className='icon'>
            {name.length > 3 ? valid() : invalid()}
@@ -65,7 +62,6 @@ const RegisterForm = () => {
           value={email}
           placeholder="Informe seu e-mail"
           onChange={({target}) => setEmail(target.value)}
-          // onBlur={validateEmail}
         />
         <span className='icon'>
         {validate(email) ? valid() : invalid()}
@@ -85,7 +81,6 @@ const RegisterForm = () => {
           value={password}
           placeholder="Informe sua senha"
           onChange={({target}) => setPassword(target.value)}
-          // onBlur={validatePassword}
         />
         <span className='icon'>
         {password > 5 ? valid() : invalid()}
@@ -104,7 +99,6 @@ const RegisterForm = () => {
           value={checkPassword}
           placeholder="Informe sua senha"
           onChange={({target}) => setCheckPassword(target.value)}
-          // onBlur={validateCheckPassword}
         />
         <span className='icon'>
         {checkPassword === password && checkPassword.length > 0 ?  valid() : invalid()}
@@ -126,7 +120,7 @@ const RegisterForm = () => {
         type="button"
         onClick={() => history.push('/')}
         >
-          {/* <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg> */}
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
           Voltar
         </button>
       </form>
