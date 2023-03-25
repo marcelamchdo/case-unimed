@@ -2,32 +2,36 @@ import React, { useState } from 'react';
 import { validate } from 'email-validator';
 import { useHistory, Redirect } from 'react-router-dom';
 import '../styles/Form.scss';
-import { useSelector, connect } from 'react-redux';
-import PropTypes from 'prop-types';
-import { LogEmail } from '../redux/actions';
+import { useSelector } from 'react-redux';
 
-const LoginForm = ({ loginEmail }) => {
+
+const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [redirect, setRedirect] = useState(false);
   
   const history = useHistory();
 
   const message = useSelector(state => state.user.message)
   const enabled = () => password.length > 5 && validate(email)
 
+  const handleHistory = () => {
+    if(history !== undefined){
+      history.push('/admin')}
+    }
   // const handleSubmit = (e) => {
   //   e.preventDefault()
   // }
 
   return (
     <div className='form'>
-      {redirect && <Redirect to="/admin" />}
+      {/* {redirect && history.push('/admin')} */}
       <form>
         <h1>Login</h1>
         
         <div className='messageUser'>{message}</div>
-        <label htmlFor="email">
+        <label 
+        htmlFor="email"
+        data-testid="email">
           E-mail
         </label>
 
@@ -36,6 +40,7 @@ const LoginForm = ({ loginEmail }) => {
           id="email"
           value={ email }
           placeholder="Informe seu e-mail"
+          data-testid="email"
           onChange={({target}) => setEmail(target.value)}
         />
 
@@ -55,10 +60,7 @@ const LoginForm = ({ loginEmail }) => {
           className="btnLogin"
           type="button"
           disabled={!enabled()}
-          onClick={ () => {
-            loginEmail(email);
-            setRedirect(true);
-          }}
+          onClick={handleHistory}
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" class="feather feather-log-in"><path d="M15 3h4a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2h-4"></path><polyline points="10 17 15 12 10 7"></polyline><line x1="15" y1="12" x2="3" y2="12"></line></svg>
           Entrar
@@ -77,16 +79,4 @@ const LoginForm = ({ loginEmail }) => {
   )
 }
 
-LoginForm.propTypes = {
-  history: PropTypes.shape({
-    push: PropTypes.func,
-  }).isRequired,
-  loginEmail: PropTypes.func.isRequired,
-};
-
-const mapDispatchToProps = (dispatch) => ({
-  loginEmail: (payload) => dispatch(LogEmail(payload))
-})
-
-
-export default connect(null, mapDispatchToProps)(LoginForm)
+export default LoginForm;

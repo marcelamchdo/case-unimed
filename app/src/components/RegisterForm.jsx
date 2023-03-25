@@ -16,6 +16,8 @@ const RegisterForm = () => {
   const dispatch = useDispatch();
   const history = useHistory();
 
+
+
   const validateName = () => {
     setNameValid(name.length > 3);
   };
