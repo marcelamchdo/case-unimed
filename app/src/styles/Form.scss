@@ -1,48 +1,94 @@
 @import "../App.scss";
 
+.form {
+  display: flex;
+}
+
 form {
-  max-width: 400px;
-  margin: 0 auto;
-  border-radius: 5px;
-  padding: 20px;
+  display: flex;
+  flex-direction: column;
 
   h1 {
     font-family: $font-family;
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 99px;
+    margin-top: 84px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 39px;
+    font-size: 32px;
   }
 
   label {
-    display: block;
-    margin-bottom: 10px;
+    font-family: $font-family;
+    text-align: left;
+    margin-bottom: 25px;
+    font-weight: 500;
+    font-size: 18.6408px;
+    line-height: 23px;
+    color: #000000;
   }
 
   input[type="text"],
   input[type="password"] {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 20px;
-    border: none;
-    border-radius: 5px;
-    box-shadow: 0px 0px 5px #ddd;
-    transition: box-shadow 0.2s ease-in-out;
+    width: 364px;
+    height: 45px;
+    margin-bottom: 25px;
+    background: #FFFFFF;
+    border: 1px solid #E1E1E1;
 
     &:focus {
       outline: none;
-      box-shadow: 0px 0px 10px #007bff;
+      box-shadow: 0px 0px 10px #97dec7;
     }
   }
 
   button {
+    font-family: $font-family;
+    width: 370px;
+    height: 53px;
+    display: flex;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18.6408px;
+    line-height: 23px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 25px;
     color: white;
     border: none;
-    border-radius: 5px;
     padding: 10px 20px;
     cursor: pointer;
     transition: background-color 0.2s ease-in-out;
 
     &:hover {
       background-color: darken(#ddd, 10%);
+    }
+
+  }
+
+  ::placeholder {
+    display: flex;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    font-family: $font-family;
+    padding-left: 10px;
+  }
+  
+  .btnLogin {
+    background-color: #00995D;
+
+    svg {
+      margin-right: 10px;
+    }
+  }
+
+  .btnRegister {
+    background-color: #9E9E9E;  
+
+    svg {
+      margin-right: 10px;
     }
   }
 }

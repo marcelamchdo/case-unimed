@@ -1,0 +1,94 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+body {
+  font-family: "Montserrat";
+}
+
+.form {
+  display: flex;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+form h1 {
+  font-family: "Montserrat";
+  text-align: center;
+  margin-bottom: 99px;
+  margin-top: 84px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 39px;
+  font-size: 32px;
+}
+form label {
+  font-family: "Montserrat";
+  text-align: left;
+  margin-bottom: 25px;
+  font-weight: 500;
+  font-size: 18.6408px;
+  line-height: 23px;
+  color: #000000;
+}
+form input[type=text],
+form input[type=password] {
+  width: 364px;
+  height: 45px;
+  margin-bottom: 25px;
+  background: #FFFFFF;
+  border: 1px solid #E1E1E1;
+}
+form input[type=text]:focus,
+form input[type=password]:focus {
+  outline: none;
+  box-shadow: 0px 0px 10px #97dec7;
+}
+form button {
+  font-family: "Montserrat";
+  width: 370px;
+  height: 53px;
+  display: flex;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18.6408px;
+  line-height: 23px;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 25px;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+form button:hover {
+  background-color: #c4c4c4;
+}
+form ::-moz-placeholder {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Montserrat";
+  padding-left: 10px;
+}
+form ::placeholder {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  font-family: "Montserrat";
+  padding-left: 10px;
+}
+form .btnLogin {
+  background-color: #00995D;
+}
+form .btnLogin svg {
+  margin-right: 10px;
+}
+form .btnRegister {
+  background-color: #9E9E9E;
+}
+form .btnRegister svg {
+  margin-right: 10px;
+}/*# sourceMappingURL=Form.css.map */
