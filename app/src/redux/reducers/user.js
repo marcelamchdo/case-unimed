@@ -1,6 +1,9 @@
 import { SIGNUP } from "../actions";
+import { LOGIN } from "../actions"
 
 const INITIAL_STATE = {message: ''}
+const EMAIL = {email: ''}
+
 const user = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case SIGNUP:
@@ -10,4 +13,17 @@ const user = (state = INITIAL_STATE, action) => {
   }
 }
 
-export default user
+const login = (state = EMAIL, action) => {
+  switch (action.type) {
+    case LOGIN: {
+      return {
+        ...state,
+        email: action.email,
+      }
+    }
+    default:
+      return state;
+  }
+};
+
+export { user, login }
