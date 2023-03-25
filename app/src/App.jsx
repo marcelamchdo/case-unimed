@@ -1,6 +1,6 @@
 import { Switch, Route } from 'react-router-dom';
 import React from 'react';
-import { Login, Register } from './pages';
+import { Login, Register, Users } from './pages';
 
 function App() {
   return (
@@ -8,6 +8,7 @@ function App() {
       <Switch>
           <Route exact path="/" component={ Login } />
           <Route exact path="/register" component={ Register } />
+          <Route exact path="/users" component={ Users } />
       </Switch>
    </div>
   );

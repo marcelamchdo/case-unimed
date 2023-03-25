@@ -3,6 +3,7 @@ import React from 'react';
 import background from '../images/back_login.png';
 import './styles/Login.scss';
 
+
 const Login = () => {
   return (
     <div className="login">

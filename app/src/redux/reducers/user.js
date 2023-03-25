@@ -1,10 +1,10 @@
 import { SIGNUP } from "../actions";
 
-const INITIAL_STATE = {user: ''}
+const INITIAL_STATE = {message: ''}
 const user = (state = INITIAL_STATE, action) => {
   switch(action.type) {
     case SIGNUP:
-      return {user: action.payload}
+      return {message: action.payload}
     default: 
         return state
   }

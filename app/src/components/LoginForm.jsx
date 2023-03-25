@@ -2,12 +2,14 @@ import React, { useState } from 'react';
 import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
 import '../styles/Form.scss';
+import { useSelector } from 'react-redux';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const history = useHistory();
 
+  const message = useSelector(state => state.user.message)
   const enabled = () => password.length > 5 && validate(email)
 
   const handleSubmit = (e) => {
@@ -16,6 +18,7 @@ const LoginForm = () => {
 
   return (
     <div className='Form'>
+      <div>{message}</div>
       <form onSubmit={handleSubmit}>
         <h1>Login</h1>
         
