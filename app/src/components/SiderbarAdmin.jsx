@@ -13,9 +13,11 @@ const Sidebar = () => {
     </div>
 
     <div>
-
-    </div>
       <p>Suporte</p>
+    </div>
+    
     </div>
   )
 }
+
+export default Sidebar
