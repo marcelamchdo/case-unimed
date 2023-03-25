@@ -2,7 +2,6 @@ import { render, fireEvent, screen } from '@testing-library/react';
 import LoginForm from '../components/LoginForm';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import App from '../App'
 const mockStore = configureMockStore();
 
 

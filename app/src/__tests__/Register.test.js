@@ -1,11 +1,19 @@
-import { fireEvent, screen } from '@testing-library/react';
+import { render, fireEvent, screen } from '@testing-library/react';
 import RegisterForm from '../components/RegisterForm';
-import { renderWithRouter } from './renderWith';
 import { validate } from 'email-validator';
+import { Provider } from 'react-redux';
+import configureMockStore from 'redux-mock-store';
+const mockStore = configureMockStore();
+
 
 describe('RegisterForm', () => {
   it('verify the existence of all fields in forms', () => {
-    renderWithRouter(<RegisterForm/>);
+    const store = mockStore({user: {message:''}});
+    render(
+      <Provider store={store}>
+        <RegisterForm/>
+      </Provider>
+    );
     const nameInput = screen.getByLabelText('Nome');
     const emailInput = screen.getByLabelText('E-mail');
     const passwordInput = screen.getByLabelText('Senha');
@@ -20,7 +28,12 @@ describe('RegisterForm', () => {
   });
 
   it('should disable the Cadastrar button when the form is invalid', () => {
-    renderWithRouter(<RegisterForm/>);
+    const store = mockStore({user: {message:''}});
+    render(
+      <Provider store={store}>
+        <RegisterForm/>
+      </Provider>
+    );
     const nameInput = screen.getByLabelText(/Nome/i);
     const emailInput = screen.getByLabelText(/E-mail/i);
     const passwordInput = screen.getByLabelText(/Senha/i);
@@ -39,7 +52,12 @@ describe('RegisterForm', () => {
   });
 
   it('should disable the Cadastrar button when the form is valid', () => {
-    renderWithRouter(<RegisterForm/>);
+    const store = mockStore({user: {message:''}});
+    render(
+      <Provider store={store}>
+        <RegisterForm/>
+      </Provider>
+    );
     const nameInput = screen.getByLabelText(/Nome/i);
     const emailInput = screen.getByLabelText(/E-mail/i);
     const passwordInput = screen.getByLabelText(/Senha/i);
