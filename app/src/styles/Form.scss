@@ -31,6 +31,9 @@ form {
 
   input[type="text"],
   input[type="password"] {
+    font-family: $font-family;
+    padding-left: 10px;
+    font-size: 16px;
     width: 364px;
     height: 45px;
     margin-bottom: 25px;
@@ -42,6 +45,8 @@ form {
       box-shadow: 0px 0px 10px #97dec7;
     }
   }
+
+
 
   button {
     font-family: $font-family;
@@ -73,10 +78,10 @@ form {
     font-weight: 400;
     font-size: 16px;
     font-family: $font-family;
-    padding-left: 10px;
+    padding-left: 5px;
   }
   
-  .btnLogin {
+  .btnLogin, .btnRegisterUser {
     background-color: #00995D;
 
     svg {
@@ -84,11 +89,19 @@ form {
     }
   }
 
-  .btnRegister {
+  .btnRegister, .btnBack {
     background-color: #9E9E9E;  
 
     svg {
       margin-right: 10px;
     }
   }
+}
+
+
+
+span {
+  position: relative;
+  right: 40px;
+  top: 7px;
 }

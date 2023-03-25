@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.register {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.registerForm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+}
+
+.background {
+  width: 50%;
+}
+
+.unimed {
+  margin-top: 302.44px;
+  width: 160.64px;
+  height: 73.82px;
+}

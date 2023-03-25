@@ -32,6 +32,9 @@ form label {
 }
 form input[type=text],
 form input[type=password] {
+  font-family: "Montserrat";
+  padding-left: 10px;
+  font-size: 16px;
   width: 364px;
   height: 45px;
   margin-bottom: 25px;
@@ -70,7 +73,7 @@ form ::-moz-placeholder {
   font-weight: 400;
   font-size: 16px;
   font-family: "Montserrat";
-  padding-left: 10px;
+  padding-left: 5px;
 }
 form ::placeholder {
   display: flex;
@@ -78,17 +81,23 @@ form ::placeholder {
   font-weight: 400;
   font-size: 16px;
   font-family: "Montserrat";
-  padding-left: 10px;
+  padding-left: 5px;
 }
-form .btnLogin {
+form .btnLogin, form .btnRegisterUser {
   background-color: #00995D;
 }
-form .btnLogin svg {
+form .btnLogin svg, form .btnRegisterUser svg {
   margin-right: 10px;
 }
-form .btnRegister {
+form .btnRegister, form .btnBack {
   background-color: #9E9E9E;
 }
-form .btnRegister svg {
+form .btnRegister svg, form .btnBack svg {
   margin-right: 10px;
+}
+
+span {
+  position: relative;
+  right: 40px;
+  top: 7px;
 }/*# sourceMappingURL=Form.css.map */
