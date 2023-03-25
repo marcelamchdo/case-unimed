@@ -1,4 +1,5 @@
 import unimed from '../images/logo_unimed.png';
+import '../styles/SidebarAdmin.scss';
 const Sidebar = () => {
   return (
     <div className="Sidebar">
@@ -15,7 +16,7 @@ const Sidebar = () => {
     <div>
       <p>Suporte</p>
     </div>
-    
+
     </div>
   )
 }

@@ -8,6 +8,7 @@ export const signupAction = (payload) => ({
 
 export const LogEmail = (payload) => ({
   type: LOGIN,
-  email: payload,
+  email: payload.email,
+  name: payload.name
 })
 

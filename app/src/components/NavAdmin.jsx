@@ -1,12 +1,15 @@
-import unimed from '../images/logo_unimed.png';
+import '../styles/NavAdmin.scss';
+
 const NavAdmin = () => {
+  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+  const date = new Date().toLocaleDateString('pt-BR', options);
   return (
-    <div className="Sidebar">
+    <div className="navAdmin">
       
 
     <div>
       <h1>Bem vindo usuário</h1>
-      <p>Data</p>
+      <p>{date}</p>
     </div>
     
 

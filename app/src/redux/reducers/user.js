@@ -1,6 +1,6 @@
 import { SIGNUP, LOGIN } from "../actions";
 
-const INITIAL_STATE = {message: '', email: ''}
+const INITIAL_STATE = {message: '', email: '', name: ''}
 
 const user = (state = INITIAL_STATE, action) => {
   switch(action.type) {
@@ -11,6 +11,7 @@ const user = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         email: action.email,
+        name: action.name
       }
     default: 
         return state
