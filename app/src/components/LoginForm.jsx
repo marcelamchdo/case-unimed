@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { validate } from 'email-validator';
-import { useHistory, Redirect } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import '../styles/Form.scss';
 import { useSelector } from 'react-redux';
 
@@ -18,13 +18,9 @@ const LoginForm = () => {
     if(history !== undefined){
       history.push('/admin')}
     }
-  // const handleSubmit = (e) => {
-  //   e.preventDefault()
-  // }
 
   return (
     <div className='form'>
-      {/* {redirect && history.push('/admin')} */}
       <form>
         <h1>Login</h1>
         

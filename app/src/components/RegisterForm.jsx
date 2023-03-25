@@ -3,6 +3,8 @@ import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
 import '../styles/Form.scss';
 import { useDispatch } from 'react-redux';
+import valid from '../images/svgs/valid'
+import invalid from '../images/svgs/invalid'
 
 const RegisterForm = () => {
   const [name, setName] = useState('');
@@ -70,16 +72,7 @@ const RegisterForm = () => {
             onBlur={validateName}
           />
           <span className='icon'>
-          {name.length > 3 ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00995D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check">
-              <polyline points="20 6 9 17 4 12" />
-            </svg>
-          ) : (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E80000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x">
-              <line x1="18" y1="6" x2="6" y2="18" />
-              <line x1="6" y1="6" x2="18" y2="18" />
-            </svg>
-          )}
+           {name.length > 3 ? valid() : invalid()}
           </span>
         </div>
       
@@ -97,16 +90,7 @@ const RegisterForm = () => {
           onBlur={validateEmail}
         />
         <span className='icon'>
-        {validate(email) ? (
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00995D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check">
-            <polyline points="20 6 9 17 4 12" />
-          </svg>
-        ) : (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E80000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x">
-            <line x1="18" y1="6" x2="6" y2="18" />
-            <line x1="6" y1="6" x2="18" y2="18" />
-           </svg>
-        )}
+        {validate(email) ? valid() : invalid()}
         </span>
       </div>
         
@@ -126,16 +110,7 @@ const RegisterForm = () => {
           onBlur={validatePassword}
         />
         <span className='icon'>
-        {password > 5 ? (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00995D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-      ) : (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E80000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        )}
+        {password > 5 ? valid() : invalid()}
         </span>
       </div>
 
@@ -154,16 +129,7 @@ const RegisterForm = () => {
           onBlur={validateCheckPassword}
         />
         <span className='icon'>
-        {checkPassword === password && checkPassword.length > 0 ? (
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#00995D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-check">
-          <polyline points="20 6 9 17 4 12" />
-        </svg>
-      ) : (
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E80000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-x">
-          <line x1="18" y1="6" x2="6" y2="18" />
-          <line x1="6" y1="6" x2="18" y2="18" />
-          </svg>
-        )}
+        {checkPassword === password && checkPassword.length > 0 ?  valid() : invalid()}
         </span>
       </div>
 
