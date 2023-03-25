@@ -6,13 +6,15 @@ const Users = () => {
     const keys = Object.keys(object)
     return(
         <div>
-            {keys.map((key, index) => (<div key={index}>{object[key]}</div>))}
+            {keys.map((key) => (<div key={key.id}>{object[key]}</div>))}
         </div>
     )
   }
   return (
     <div>
-      {users.map((object) => (showElements(object)))}
+      {users.map((object) => (
+        <div key={object.id}>{showElements(object)}</div>
+        ))}
     </div>
   )
 }

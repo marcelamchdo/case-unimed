@@ -16,14 +16,14 @@ const LoginForm = ({ loginEmail }) => {
   const message = useSelector(state => state.user.message)
   const enabled = () => password.length > 5 && validate(email)
 
-  const handleSubmit = (e) => {
-    e.preventDefault()
-  }
+  // const handleSubmit = (e) => {
+  //   e.preventDefault()
+  // }
 
   return (
     <div className='form'>
       {redirect && <Redirect to="/admin" />}
-      <form onSubmit={handleSubmit}>
+      <form>
         <h1>Login</h1>
         
         <div className='messageUser'>{message}</div>
@@ -89,6 +89,4 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 
-
-// export default LoginForm;
 export default connect(null, mapDispatchToProps)(LoginForm)
