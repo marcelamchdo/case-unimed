@@ -1,4 +1,4 @@
-import users from '../API/users'
+import users from '../mock/users'
 import {useParams} from 'react-router-dom'
 import { useState } from 'react'
 

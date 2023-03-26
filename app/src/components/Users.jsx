@@ -1,5 +1,5 @@
 import {useState} from 'react'
-import users from '../API/users'
+import users from '../mock/users'
 import { Link } from 'react-router-dom'
 
 const Users = () => {
