@@ -1,7 +1,7 @@
 import LoginForm from "../components/LoginForm";
 import React from 'react';
 import background from '../images/back_login.png';
-import '../styles/Login.scss';
+import '../styles/PagesStyles/Login.scss';
 import unimed from '../images/logo_unimed.png';
 
 

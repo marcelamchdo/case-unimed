@@ -8,13 +8,17 @@ const UpdateForm = () => {
   const [permission, setPermission] = useState('')
   const [status, setStatus] = useState('')
   const params = useParams()
+
   let user = users.find((i) => i.id === params.id)
+  
   const newUser = {name, email, permission, status}
   console.log(newUser)
+
   const handleChange = () => {
     user = newUser
     console.log(user)
   }
+
   return (
     <div className='updateForm'>
       <form >

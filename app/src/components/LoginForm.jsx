@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
-import '../styles/Form.scss';
+import '../styles/ComponentsStyles/Form.scss';
 import { useSelector } from 'react-redux';
 
 

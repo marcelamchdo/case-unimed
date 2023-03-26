@@ -1,7 +1,7 @@
 import RegisterForm from "../components/RegisterForm";
 import React from 'react';
 import background from '../images/back_login.png';
-import '../styles/Register.scss';
+import '../styles/PagesStyles/Register.scss';
 import unimed from '../images/logo_unimed.png';
 
 const Register = () => {

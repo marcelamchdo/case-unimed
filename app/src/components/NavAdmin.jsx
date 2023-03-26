@@ -1,4 +1,4 @@
-import '../styles/NavAdmin.scss';
+import '../styles/ComponentsStyles/NavAdmin.scss';
 import { useSelector } from 'react-redux';
 
 const NavAdmin = () => {

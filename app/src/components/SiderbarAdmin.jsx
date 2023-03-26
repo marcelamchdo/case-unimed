@@ -1,5 +1,5 @@
 import unimed from '../images/logo_unimed.png';
-import '../styles/SidebarAdmin.scss';
+import '../styles/ComponentsStyles/SidebarAdmin.scss';
 import { Link } from 'react-router-dom';
 
 const Sidebar = () => {

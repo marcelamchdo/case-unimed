@@ -1,0 +1,10 @@
+.welcome {
+  display: flex;
+  justify-content: space-between;
+}
+
+.columnWelcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between
+}
