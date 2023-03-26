@@ -1,4 +1,4 @@
-import { Api } from "../ApiConfig";
+import { Api } from "../ApiConfig.js";
 
 const getAll = async () => {
   try {
