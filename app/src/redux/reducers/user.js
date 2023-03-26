@@ -1,6 +1,6 @@
-import { SIGNUP, LOGIN } from "../actions";
+import { SIGNUP, LOGIN, QUERY } from "../actions";
 
-const INITIAL_STATE = {message: '', email: '', name: ''}
+const INITIAL_STATE = {message: '', email: '', name: '', query: ''}
 
 const user = (state = INITIAL_STATE, action) => {
   switch(action.type) {
@@ -16,9 +16,14 @@ const user = (state = INITIAL_STATE, action) => {
         ...state,
         name: action.payload.name
       }
+    case QUERY:
+      return {
+        ...state,
+        query: action.payload
+      }
     default: 
         return state
-  }
+    }
 }
 
 export default user

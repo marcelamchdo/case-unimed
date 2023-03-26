@@ -1,15 +1,27 @@
 import {useState, useEffect} from 'react'
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import {getAll, deleteById } from '../database/api/services/UsersService'
 
 const Users = () => {
   const [users, setUsers] = useState([])
+
+  const query = useSelector((state) => state.user.query)
+  
+
   const getUsers = async () => {
     const data = await getAll();
-    setUsers(data);
-  };
- useEffect(() => {getUsers()},[])
 
+    if (query.length > 0) {
+      const queryUser = users.filter((i) => i.name.includes(query))
+      setUsers(queryUser)
+    } else {
+
+    setUsers(data);
+    }
+  };
+
+  useEffect(() => {getUsers()},[query])
   
   const showUserProperty = (object) => {
     const keys = Object.keys(object)
@@ -55,9 +67,7 @@ const Users = () => {
               </>
               ))}
             </tbody>
-            
           </table>
-          
         </div>
     </div>
   )

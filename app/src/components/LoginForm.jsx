@@ -22,7 +22,7 @@ const LoginForm = () => {
       <form>
         <h1>Login</h1>
         
-        <div className='messageUser'>{message}</div>
+        <div className='messageUser'>{'' || message}</div>
         <label 
         htmlFor="email"
         data-testid="email">

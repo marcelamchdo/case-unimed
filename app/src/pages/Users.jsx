@@ -1,13 +1,21 @@
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import { useHistory } from "react-router-dom";
 import NavAdmin from "../components/NavAdmin";
 import Sidebar from "../components/SiderbarAdmin";
 import Users from "../components/Users";
 import "../styles/PagesStyles/Users.scss"
 
-
 const UsersAdmin = () => {
-  const history = useHistory()
+  const [query, setQuery] = useState('')
 
+  const history = useHistory()
+  const dispatch = useDispatch()
+
+  const handleSearch = (value) => {
+    setQuery(value)
+    dispatch({type: 'QUERY', payload: value})
+  }
 
   return (
     <div className="welcome">
@@ -28,6 +36,8 @@ const UsersAdmin = () => {
             <input 
             className="searchInput"
             placeholder="Buscar usuário"
+            value={query}
+            onChange={({target}) => handleSearch(target.value)}
             />
 
           <button 
