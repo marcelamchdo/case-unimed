@@ -6,6 +6,24 @@ body {
 .form {
   display: flex;
 }
+.form .messageUser {
+  background-color: #B0CC48;
+  color: #FFFFFF;
+  width: 358px;
+  height: 58px;
+  left: 898px;
+  top: 222px;
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  padding-left: 20px;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.form .messageUser svg {
+  position: relative;
+  top: 5px;
+}
 
 form {
   display: flex;

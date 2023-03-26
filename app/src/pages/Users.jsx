@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from "react-router-dom";
 import NavAdmin from "../components/NavAdmin";
 import Sidebar from "../components/SiderbarAdmin";
@@ -11,6 +11,7 @@ const UsersAdmin = () => {
 
   const history = useHistory()
   const dispatch = useDispatch()
+  const created = useSelector(state => state.user.created)
 
   const handleSearch = (value) => {
     setQuery(value)
@@ -19,6 +20,7 @@ const UsersAdmin = () => {
 
   return (
     <div className="welcome">
+      <div>{created && 'Usuário atualizado/cadastrado com sucesso'}</div>
       <div className="sidebarAdmin">
         <Sidebar />
       </div>

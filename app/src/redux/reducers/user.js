@@ -1,6 +1,6 @@
-import { SIGNUP, LOGIN, QUERY } from "../actions";
+import { SIGNUP, LOGIN, QUERY, CREATED } from "../actions";
 
-const INITIAL_STATE = {message: '', email: '', name: '', query: ''}
+const INITIAL_STATE = {message: '', email: '', name: '', query: '', created: false}
 
 const user = (state = INITIAL_STATE, action) => {
   switch(action.type) {
@@ -20,6 +20,10 @@ const user = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         query: action.payload
+      }
+    case CREATED:
+      return {
+        ...state, created: action.payload
       }
     default: 
         return state

@@ -1,6 +1,7 @@
 export const SIGNUP = 'SIGNUP'
 export const LOGIN = 'LOGIN'
 export const QUERY = 'QUERY'
+export const CREATED = 'CREATED'
 
 export const signupAction = (payload) => ({
   type: SIGNUP,
@@ -17,3 +18,7 @@ export const query = (payload) => ({
   payload: payload
 })
 
+export const createdUpdated = (payload) => ({
+  type: CREATED,
+  payload: payload,
+})

@@ -1,6 +1,7 @@
 import users from '../mock/users'
 import {useParams, useHistory } from 'react-router-dom'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
 import { createUser } from '../database/api/services/UsersService'
 import '../styles/PagesStyles/Update.scss';
 
@@ -12,12 +13,12 @@ const UpdateForm = () => {
   const [status, setStatus] = useState('Ativo')
   const params = useParams()
   const history = useHistory()
+  const dispatch = useDispatch()
   // updateById(params.id, user)
 
   let user = users.find((i) => i.id === params.id)
   
   const newUser = {name, email, permission, status}
-  console.log(newUser)
   const optionsImplementation = (object) => (
     <option
       key={object}
@@ -28,8 +29,9 @@ const UpdateForm = () => {
   )
   const handleChange = async() => {
     user = newUser
+    dispatch({type: 'CREATED', payload: true})
     await createUser(user)
-    history.push('/welcome')
+    history.push('/users')
   }
 
   return (

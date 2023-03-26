@@ -61,8 +61,59 @@
   line-height: 20px;
   justify-content: center;
 
+    &:hover {
+      background-color: #107a4e;
+    }
+
     svg {
       position: relative;
       top: 2px;
     }
 }
+
+.tableContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0px 50px 0px 50px;
+
+    thead {
+      display: flex;
+      width: 100%;
+      justify-content: flex-start;
+      border-bottom: 2px solid black;    
+    }
+    
+    tr {
+      display: flex;
+      align-items: start;
+      width: 100%;
+    }
+
+    th {
+      padding-bottom: 15px;
+      align-items: start;
+      gap: 300px;
+      width: 300px;
+      align-self: flex-start;
+    }
+
+    td {
+      display: flex;
+    }
+
+    tbody {
+      display: flex;
+      flex-direction: column;
+      margin-top: 15px;
+      width: 100%;
+    }
+
+    .btnUsers {
+      display: flex
+    }
+
+
+}
+
+
+
