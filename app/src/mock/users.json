@@ -1,25 +1,18 @@
 {
   "users": [
     {
-      "name": "dani",
-      "email": "arqmrcl@gmail.com",
-      "permission": "Usuário",
-      "status": "Ativo",
-      "id": "1"
-    },
-    {
-      "id": "2",
-      "nome": "joao",
-      "email": "exemple@exemple.com",
-      "permissao": "administrador",
-      "status": "ativo"
-    },
-    {
       "name": "Marcela",
       "email": "arqmrcl@gmail.com",
       "permission": "Usuário",
       "status": "Ativo",
       "id": "iOnZ_8t"
+    },
+    {
+      "name": "Italo",
+      "email": "arqmrcl@gmail.com",
+      "permission": "Usuário",
+      "status": "Ativo",
+      "id": "8pWz_Rw"
     }
   ]
 }

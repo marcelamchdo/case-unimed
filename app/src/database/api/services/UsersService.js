@@ -34,8 +34,8 @@ const updateById = async (id, dataToUpdate) => {
 }
 const deleteById = async (id) => {
   try {
-    await Api().delete(`/users/${id}`);
-    return undefined; 
+    const data = await Api().delete(`/users/${id}`);
+    return data; 
   } catch (error) {
     return error.stack
   }

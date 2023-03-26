@@ -1,6 +1,6 @@
 import {useState, useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import {getAll} from '../database/api/services/UsersService'
+import {getAll, deleteById } from '../database/api/services/UsersService'
 
 const Users = () => {
   const [users, setUsers] = useState([])
@@ -15,12 +15,18 @@ const Users = () => {
     const keys = Object.keys(object)
     return(
         <>
-            {keys.map((key) => (
+            {keys.map((key, index) => index < 4 && (
               <tr key={key.id}>{object[key]}</tr>
               ))}
         </>
     )
   }
+
+  const handleDelete = async (object) => {
+    setUsers(users.filter((i) => i.id !== object.id))
+    await deleteById(object.id);
+  }
+
   return (
     <div className='UsersForm'>
         <div>
@@ -41,8 +47,7 @@ const Users = () => {
               <tr key={object.id}>{showUserProperty(object) }</tr>
               <Link key={`link-${object.id}`} to ={`/update/${object.id}`}>Editar</Link>
               <button
-                onClick={() => setUsers(users.filter((i) => i.id !== object.id)
-                  )}
+                onClick={() => handleDelete(object)}
               >Deletar</button>
               </>
               ))}
