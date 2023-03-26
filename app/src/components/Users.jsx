@@ -1,8 +1,10 @@
-import React from 'react'
+import {useState} from 'react'
 import users from '../API/users'
 import { Link } from 'react-router-dom'
 
 const Users = () => {
+  const [getUsers, setGetUsers] = useState(users)
+  
   const showElements = (object) => {
     const keys = Object.keys(object)
     return(
@@ -18,11 +20,14 @@ const Users = () => {
   }
   return (
     <div>
-      {users.map((object) => (
+      {getUsers.map((object) => (
         <div>
           <div key={object.id}>{showElements(object) }</div>
           <Link to ={`/update/${object.id}`}>Editar</Link>
-          <button>Deletar</button>
+          <button
+            onClick={() => setGetUsers(getUsers.filter((i) => i.id !== object.id)
+              )}
+          >Deletar</button>
         </div>
         ))}
     </div>
