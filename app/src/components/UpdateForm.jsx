@@ -1,5 +1,5 @@
 import users from '../mock/users'
-import {useParams} from 'react-router-dom'
+import {useParams, useHistory } from 'react-router-dom'
 import { useState } from 'react'
 import { updateById } from '../database/api/services/UsersService'
 import '../styles/PagesStyles/Update.scss';
@@ -11,6 +11,7 @@ const UpdateForm = () => {
   const [permission, setPermission] = useState('Usuário')
   const [status, setStatus] = useState('Ativo')
   const params = useParams()
+  const history = useHistory()
   // updateById(params.id, user)
 
   let user = users.find((i) => i.id === params.id)
@@ -27,8 +28,8 @@ const UpdateForm = () => {
   )
   const handleChange = async() => {
     user = newUser
-    const updated = await updateById(params.id, user)
-    console.log(updated)
+    await updateById(params.id, user)
+    history.push('/welcome')
   }
 
   return (
@@ -124,6 +125,7 @@ const UpdateForm = () => {
         <button 
         className='btnBack'
         type="button"
+        onClick={() => history.push('/welcome')}
         
         >
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-arrow-left"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
