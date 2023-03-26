@@ -24,7 +24,10 @@ const Users = () => {
 
   const handleDelete = async (object) => {
     setUsers(users.filter((i) => i.id !== object.id))
-    await deleteById(object.id);
+    const confirmDelete = window.confirm("Deseja realmente excluir o usuário?") 
+    if (confirmDelete) {
+      await deleteById(object.id);
+    }
   }
 
   return (

@@ -1,13 +1,6 @@
 {
   "users": [
     {
-      "name": "Marcela",
-      "email": "arqmrcl@gmail.com",
-      "permission": "Usuário",
-      "status": "Ativo",
-      "id": "iOnZ_8t"
-    },
-    {
       "name": "Italo",
       "email": "arqmrcl@gmail.com",
       "permission": "Usuário",
