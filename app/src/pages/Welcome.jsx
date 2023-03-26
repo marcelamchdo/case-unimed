@@ -5,10 +5,12 @@ import '../styles/PagesStyles/Welcome.scss';
 const Welcome = () => {
   return (
     <div className="welcome">
-      <Sidebar />
+      <div className="sidebarAdmin">
+        <Sidebar />
+      </div>
       <div className="columnWelcome">
         <NavAdmin />
-        <div>
+        <div className="textPage">
           <h1>Lorem ipsum dolor sit amet.</h1>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis gravida semper malesuada. Praesent sagittis magna 
     purus, id porta risus vehicula ut. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos 

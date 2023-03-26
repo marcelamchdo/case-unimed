@@ -1,10 +1,38 @@
+@import "../../App.scss";
+
 .welcome {
   display: flex;
-  justify-content: space-between;
+}
+
+.sidebarAdmin {
+  width: 338px;
+  background-color: #F7F6F9;
 }
 
 .columnWelcome {
   display: flex;
   flex-direction: column;
-  justify-content: space-between
+  gap: 86px;
+}
+
+.textPage {
+  margin: 30px 100px 0px 30px;
+
+  h1 {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 800;
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 25px;
+  }
+
+  p {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+
+  }
 }

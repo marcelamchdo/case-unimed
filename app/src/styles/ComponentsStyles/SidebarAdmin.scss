@@ -1,4 +1,98 @@
+@import "../../App.scss";
+
+*{
+  margin: 0;
+  padding: 0
+}
+
+body {
+  font-family: $font-family;
+}
+
 .Sidebar {
   display: flex;
   flex-direction: column;
+  width: 338px;
+  height: 100vh;
+}
+
+.unimedSidebar {
+  width: 160.64px;
+  height: 73.82px;
+  margin: 40px 0px 0px 34px;
+}
+
+.menuSidebar {
+  color: #9A9A9A;
+  margin: 80px 80px 40px 40px;
+}
+
+.menu, a {
+  display: flex;
+  align-items: center;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+  
+  &:active{
+    color: #000000;
+  }
+
+  &:hover {
+    color: #000000;
+
+  }
+}
+
+svg {
+  position: relative;
+  margin: 0px 10px 8px 0px;
+
+}
+
+
+ul {
+  list-style-type: none;
+  margin-bottom: 500px;
+}
+
+li {
+  margin-bottom: 30px;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+  color: #9A9A9A;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #000000;
+  text-decoration: none;
+}
+
+p {
+  display: flex;
+  align-items: center;
+  display: flex;
+  align-items: center;
+  font-family: $font-family;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 20px;
+
+  &:active{
+    color: #000000;
+  }
+
+  &:hover {
+    color: #000000;
+
+  }
 }
