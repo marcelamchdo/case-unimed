@@ -3,6 +3,7 @@ import React from 'react';
 import { Login, Register, Users } from './pages';
 import Welcome from './pages/Welcome';
 import Update from './pages/Update';
+import Create from './pages/CreateUser';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
           <Route exact path="/welcome" component={ Welcome } />
           <Route exact path="/users" component={ Users } />
           <Route exact path="/update/:id" component={ Update } />
+          <Route exact path="/create" component={ Create } />
       </Switch>
    </BrowserRouter>
   );

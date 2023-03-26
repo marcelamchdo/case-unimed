@@ -13,6 +13,13 @@
       "email": "exemple@exemple.com",
       "permissao": "administrador",
       "status": "ativo"
+    },
+    {
+      "name": "Marcela",
+      "email": "arqmrcl@gmail.com",
+      "permission": "Usuário",
+      "status": "Ativo",
+      "id": "iOnZ_8t"
     }
   ]
 }

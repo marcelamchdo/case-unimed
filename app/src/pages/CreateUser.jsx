@@ -1,6 +1,6 @@
 import NavAdmin from "../components/NavAdmin"
 import Sidebar from "../components/SiderbarAdmin"
-import UpdateForm from "../components/UpdateForm"
+import CreateForm from "../components/CreateForm"
 import '../styles/PagesStyles/Update.scss';
 
 const Create = () => {
@@ -11,7 +11,7 @@ const Create = () => {
     </div>
     <div className="columnWelcome">
       <NavAdmin />
-      <UpdateForm />
+      <CreateForm />
     </div>
   </div>
 )}
