@@ -1,10 +1,10 @@
 {
   "users": [
     {
-      "name": "juliana",
+      "name": "Marcela",
       "email": "arqmrcl@gmail.com",
-      "permission": "Administrador",
-      "status": "Inativo",
+      "permission": "Usuário",
+      "status": "Ativo",
       "id": "1"
     },
     {

@@ -1,0 +1,43 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+body {
+  font-family: "Montserrat";
+}
+
+.navAdmin {
+  display: flex;
+  justify-content: space-between;
+  margin: 40px 100px 0px 30px;
+}
+
+.welcomeText {
+  display: flex;
+  flex-direction: column;
+}
+.welcomeText h1 {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 36px;
+  line-height: 44px;
+  color: #000000;
+}
+.welcomeText p {
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 300;
+  font-size: 16.9982px;
+  line-height: 21px;
+  color: #000000;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 25px;
+}
+
+.perfil {
+  border-radius: 50%;
+  width: 50px;
+  border: 3px solid #DFDFDF;
+}/*# sourceMappingURL=NavAdmin.css.map */

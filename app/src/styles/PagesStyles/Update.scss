@@ -1,0 +1,83 @@
+@import "../../App.scss";
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+div .updateText {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.updateText h1 {
+  width: 100%;
+  padding: 0px 0px 0px 30px;
+}
+
+.updateText form input {
+  display: flex;
+  width: 950px;
+  height: 45px;
+  margin-top: 32px;
+  color: #000000
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  width: 100%;
+  margin: 30px;
+}
+
+input .input-update{
+  height: 45px;
+  background: #FFFFFF;
+  border: 1px solid #E1E1E1;
+  padding-left: 950px;
+}
+
+div .select-options {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 950px;
+  gap: 30px;
+  margin-bottom: 32px;
+}
+
+.select-options select {
+  font-family: $font-family;
+  font-size: 16px;
+  display: flex;
+  margin-top: 32px;
+  width: 462px;
+  height: 45px;
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.custom-buttons {
+  display: flex;
+  width: 100%;
+  gap: 210px;
+}
+
+.custom-buttons button {
+  width: 370px;
+
+}
+
+// select {
+//   text-align: center;
+// }
+
+// .updateText form select {
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+
+// }

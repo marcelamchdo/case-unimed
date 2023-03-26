@@ -22,7 +22,7 @@ const Users = () => {
     )
   }
   return (
-    <div>
+    <div className='UsersForm'>
         <div>
 
           <table>
