@@ -2,7 +2,7 @@ import { Api } from "../ApiConfig"
 
 const getAll = async () => {
   try {
-    const { data } = await Api().get('/users');
+    const {data}  = await Api().get('/users');
     return data; 
   } catch (error) {
     return error.stack
@@ -41,7 +41,7 @@ const deleteById = async (id) => {
   }
 }
 
-export const UsersService = { 
+export { 
   getAll,
   createUser,
   getById,
