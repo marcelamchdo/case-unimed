@@ -13,7 +13,7 @@ const Users = () => {
     const data = await getAll();
 
     if (query.length > 0) {
-      const queryUser = users.filter((i) => i.name.includes(query))
+      const queryUser = users.filter(({name, email}) => name.includes(query) || email.includes(query))
       setUsers(queryUser)
     } else {
 
