@@ -1,22 +1,32 @@
 import users from '../mock/users'
 import {useParams} from 'react-router-dom'
 import { useState } from 'react'
+import { updateById } from '../database/api/services/UsersService'
 
 const UpdateForm = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
-  const [permission, setPermission] = useState('')
-  const [status, setStatus] = useState('')
+  const [permission, setPermission] = useState('Usuário')
+  const [status, setStatus] = useState('Ativo')
   const params = useParams()
+  // updateById(params.id, user)
 
   let user = users.find((i) => i.id === params.id)
   
   const newUser = {name, email, permission, status}
   console.log(newUser)
-
-  const handleChange = () => {
+  const optionsImplementation = (object) => (
+    <option
+      key={object}
+      value={object}
+    >
+      {object}
+    </option>
+  )
+  const handleChange = async() => {
     user = newUser
-    console.log(user)
+    const updated = await updateById(params.id, user)
+    console.log(updated)
   }
 
   return (
@@ -83,10 +93,11 @@ const UpdateForm = () => {
       </label>
 
       <select name="permission"
+      value={permission}
       onChange={({target}) => setPermission(target.value)}
       >
-        <option value="administrador">Administrador</option>
-        <option value="usuario">Usuário</option>
+        {['Administrador', 'Usuário'].map((object) => optionsImplementation(object))}
+
       </select>
 
       <label>
@@ -94,10 +105,11 @@ const UpdateForm = () => {
       </label>
 
       <select name="status"
+      value={status}
       onChange={({target}) => setStatus(target.value)}
       >
-        <option value="ativo">Ativo</option>
-        <option value="inativo">Inativo</option>
+        {['Ativo', 'Inativo'].map((object) => optionsImplementation(object))}
+ 
       </select>
 
         <button 

@@ -3,13 +3,12 @@ import { Link } from 'react-router-dom'
 import {getAll} from '../database/api/services/UsersService'
 
 const Users = () => {
-  const [getUsers, setGetUsers] = useState([])
-  const printUsers = async () => {
-    const  data  = await getAll();
-    console.log(data);
-    setGetUsers(data);
+  const [users, setUsers] = useState([])
+  const getUsers = async () => {
+    const data = await getAll();
+    setUsers(data);
   };
- useEffect(() => {printUsers()},[])
+ useEffect(() => {getUsers()},[])
 
   
   const showUserProperty = (object) => {
@@ -37,12 +36,12 @@ const Users = () => {
             </thead>
 
             <tbody>
-            {getUsers?.map((object) => (
+            {users?.map((object) => (
             <>
               <tr key={object.id}>{showUserProperty(object) }</tr>
               <Link key={`link-${object.id}`} to ={`/update/${object.id}`}>Editar</Link>
               <button
-                onClick={() => setGetUsers(getUsers.filter((i) => i.id !== object.id)
+                onClick={() => setUsers(users.filter((i) => i.id !== object.id)
                   )}
               >Deletar</button>
               </>
