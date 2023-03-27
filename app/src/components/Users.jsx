@@ -5,7 +5,8 @@ import {getAll, deleteById } from '../database/api/services/UsersService'
 
 const Users = () => {
   const [users, setUsers] = useState([])  
-  // const [showAlert, setShowAlert] = useState(false)
+  const [showAlert, setShowAlert] = useState(false)
+  const [id, setId] = useState('')
   const query = useSelector((state) => state.user.query)
   
   const getUsers = async () => {
@@ -35,27 +36,25 @@ const Users = () => {
     )
   }
 
-//   const Alert = (object) => {
-//     return(
-//         <div>
-//             <p>Tem certeza que deseja deletar?</p>
-//             <button onClick={handleDelete(object)}>Sim</button>
-//             <button onClick={() => setShowAlert(false) }>Não</button>
-//         </div>
-//     )
-// }
+  const Alert = () => {
+    return(
+        <div>
+            <p>Tem certeza que deseja deletar?</p>
+            <button onClick={() => handleDelete(id)}>Sim</button>
+            <button onClick={() => setShowAlert(false) }>Não</button>
+        </div>
+    )
+}
 
-const handleDelete = async (object) => {
-  setUsers(users.filter((i) => i.id !== object.id))
-  const confirmDelete = window.confirm("Deseja realmente excluir o usuário?") 
-  if (confirmDelete) {
-    await deleteById(object.id);
-  }
+const handleDelete = async () => {
+    setUsers(users.filter((i) => i.id !== id))
+    await deleteById(id);
+    setShowAlert(false)
 }
 
   return (
     <div>
-      {/* {showAlert && <Alert />} */}
+      {showAlert && Alert()}
       <table className="tableContainer">
         <thead>
           <tr>
@@ -81,7 +80,7 @@ const handleDelete = async (object) => {
               </Link>
 
               <button
-                onClick={() => handleDelete(object)}
+                onClick={() =>{ setShowAlert(true); setId(object.id)}}
                 >
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#898989" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
               </button>

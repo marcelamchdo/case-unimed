@@ -5,13 +5,6 @@
       "email": "exemple@exemple.com",
       "permissao": "administrador",
       "status": "ativo",
-      "id": "1"
-    },
-    {
-      "nome": "joao",
-      "email": "exemple@exemple.com",
-      "permissao": "administrador",
-      "status": "ativo",
       "id": "2"
     },
     {
@@ -21,5 +14,5 @@
       "status": "ativo",
       "id": "3"
     }
-   ]
+  ]
 }
