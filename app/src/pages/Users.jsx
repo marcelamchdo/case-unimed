@@ -26,7 +26,7 @@ const UsersAdmin = () => {
       <div className="columnWelcome">
         <NavAdmin />
         <div className="created">
-          {created && 'Usuário atualizado/cadastrado com sucesso'}
+          {created && <p>Usuário atualizado/cadastrado com sucesso</p>}
         </div>
         <div className="usersHeader">
           <h1 className="usersText">

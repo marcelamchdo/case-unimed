@@ -4,21 +4,21 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createUser } from '../database/api/services/UsersService'
 import '../styles/PagesStyles/Update.scss';
+import md5 from 'md5'
 
-
-const UpdateForm = () => {
+const CreateForm = () => {
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const [permission, setPermission] = useState('Usuário')
+  const [password, setPassword] = useState('')
   const [status, setStatus] = useState('Ativo')
   const params = useParams()
   const history = useHistory()
   const dispatch = useDispatch()
-  // updateById(params.id, user)
 
   let user = users.find((i) => i.id === params.id)
   
-  const newUser = {name, email, permission, status}
+  const newUser = {name, email, permission, status, password: md5(password)}
   const optionsImplementation = (object) => (
     <option
       key={object}
@@ -76,6 +76,7 @@ const UpdateForm = () => {
             className="input-update"
             type="password"
             id="password"
+
             placeholder="Informe sua senha"
             
           />
@@ -90,7 +91,9 @@ const UpdateForm = () => {
           className="input-update"
           type="password"
           id="checkPassword"
+          value={password}
           placeholder="Informe sua senha"
+          onChange={({target}) => setPassword(target.value)}
         />
       </div>
 
@@ -149,4 +152,4 @@ const UpdateForm = () => {
   )
 }
 
-export default UpdateForm;
+export default CreateForm;

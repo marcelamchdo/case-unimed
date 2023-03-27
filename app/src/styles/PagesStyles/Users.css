@@ -142,17 +142,21 @@ body {
   border: none;
   top: 1px;
 }
-.tableContainer .created {
-  background-color: #B0CC48;
-  color: #FFFFFF;
-  width: 358px;
+
+div .created {
+  position: relative;
+  left: 100px;
+  width: 1200px;
   height: 58px;
-  left: 898px;
-  top: 222px;
-  margin-bottom: 20px;
+  background-color: #B0CC48;
   align-items: center;
-  display: flex;
-  padding-left: 20px;
-  flex-direction: row;
-  justify-content: space-between;
+}
+div .created p {
+  font-family: "Montserrat";
+  color: #FFFFFF;
+  align-items: center;
+  position: relative;
+  top: 20px;
+  left: 20px;
+  font-weight: 200;
 }/*# sourceMappingURL=Users.css.map */
