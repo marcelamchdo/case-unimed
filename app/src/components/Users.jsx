@@ -2,6 +2,7 @@ import {useState, useEffect} from 'react'
 import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import {getAll, deleteById } from '../database/api/services/UsersService'
+import "./AlertBox/Alert.css"
 
 const Users = () => {
   const [users, setUsers] = useState([])  
@@ -37,14 +38,19 @@ const Users = () => {
   }
 
   const Alert = () => {
-    return(
-        <div>
-            <p>Tem certeza que deseja deletar?</p>
-            <button onClick={() => handleDelete(id)}>Sim</button>
-            <button onClick={() => setShowAlert(false) }>Não</button>
-        </div>
-    )
-}
+    return (
+      <div className="alert">
+        <p className="message">Tem certeza que deseja deletar?</p>
+        <button className="btn delete" onClick={() => handleDelete()}>
+          Sim
+        </button>
+        <button className="btn cancel" onClick={() => setShowAlert(false)}>
+          Não
+        </button>
+      </div>
+    );
+  };
+  
 
 const handleDelete = async () => {
     setUsers(users.filter((i) => i.id !== id))
