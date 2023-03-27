@@ -83,27 +83,76 @@ body {
 .tableContainer {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 0px 80px 0px 50px;
+  padding: 0px 50px 0px 50px;
 }
 .tableContainer thead {
   display: flex;
   width: 100%;
-  border-bottom: 2px solid black;
-}
-.tableContainer tr {
-  display: flex;
-  justify-content: space-around;
-  width: 100%;
-}
-.tableContainer th {
+  border-bottom: 2px solid #E2E2E2;
   padding-bottom: 15px;
 }
-.tableContainer .tableRow {
+.tableContainer thead tr {
   display: flex;
+  justify-content: flex-start;
+  width: 100%;
+}
+.tableContainer thead th {
+  width: 320px;
+  text-align: left;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  color: #8E8E8E;
 }
 .tableContainer tbody {
   display: flex;
   flex-direction: column;
-  margin-top: 15px;
+  width: 100%;
+}
+.tableContainer .tableRow {
+  display: flex;
+  font-family: "Montserrat";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 20px;
+  color: #3A3A3A;
+  border-bottom: 2px solid #E2E2E2;
+  padding-top: 20px;
+}
+.tableContainer .trUsers {
+  width: 320px;
+  text-align: left;
+}
+.tableContainer .btnUsers {
+  display: flex;
+  justify-content: flex-end;
+  width: 80px;
+  align-items: center;
+}
+.tableContainer .btnUsers svg {
+  position: relative;
+  bottom: 6px;
+}
+.tableContainer .btnUsers button {
+  position: relative;
+  background-color: white;
+  border: none;
+  top: 1px;
+}
+.tableContainer .created {
+  background-color: #B0CC48;
+  color: #FFFFFF;
+  width: 358px;
+  height: 58px;
+  left: 898px;
+  top: 222px;
+  margin-bottom: 20px;
+  align-items: center;
+  display: flex;
+  padding-left: 20px;
+  flex-direction: row;
+  justify-content: space-between;
 }/*# sourceMappingURL=Users.css.map */
