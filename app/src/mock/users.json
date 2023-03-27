@@ -1,39 +1,25 @@
 {
   "users": [
     {
-      "name": "Italo",
-      "email": "arqmrcl@gmail.com",
-      "permission": "Usuário",
-      "status": "Ativo",
-      "id": "8pWz_Rw"
+      "nome": "joao",
+      "email": "exemple@exemple.com",
+      "permissao": "administrador",
+      "status": "ativo",
+      "id": "1"
     },
     {
-      "name": "daniel",
-      "email": "daniel@gmail.com",
-      "permission": "Usuário",
-      "status": "Ativo",
-      "id": "TupdiJW"
+      "nome": "joao",
+      "email": "exemple@exemple.com",
+      "permissao": "administrador",
+      "status": "ativo",
+      "id": "2"
     },
     {
-      "name": "raynara",
-      "email": "raynara@gmail.com",
-      "permission": "Usuário",
-      "status": "Ativo",
-      "id": "qMFe7yU"
-    },
-    {
-      "name": "Marcela Machado",
-      "email": "arqmrcl@gmail.com",
-      "permission": "Usuário",
-      "status": "Ativo",
-      "id": "PixkmKy"
-    },
-    {
-      "name": "marcela",
-      "email": "arqmrcl@gmail.com",
-      "permission": "Usuário",
-      "status": "Ativo",
-      "id": "dHh9sRd"
+      "nome": "joao",
+      "email": "exemple@exemple.com",
+      "permissao": "administrador",
+      "status": "ativo",
+      "id": "3"
     }
-  ]
+   ]
 }

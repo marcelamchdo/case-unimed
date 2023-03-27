@@ -20,12 +20,14 @@ const UsersAdmin = () => {
 
   return (
     <div className="welcome">
-      <div>{created && 'Usuário atualizado/cadastrado com sucesso'}</div>
       <div className="sidebarAdmin">
         <Sidebar />
       </div>
       <div className="columnWelcome">
         <NavAdmin />
+        <div className="created">
+          {created && 'Usuário atualizado/cadastrado com sucesso'}
+        </div>
         <div className="usersHeader">
           <h1 className="usersText">
             Usuários
