@@ -1,17 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { validate } from 'email-validator';
 import { useHistory } from 'react-router-dom';
+import { getAll } from '../database/api/services/UsersService'
 import '../styles/ComponentsStyles/Form.scss';
 import { useSelector } from 'react-redux';
+import md5 from 'md5';
 
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [checkUser, setCheckUSer] = useState('')
   
+  const getUser = async() => {
+    const users = await getAll()
+    const admin = users.find((i) => i.permissao === "Administrador")
+    setCheckUSer(admin)
+  }
+  
+  useEffect(() => {getUser()}, [checkUser])
+
   const history = useHistory();
   const message = useSelector(state => state.user.message)
   const enabled = () => password.length > 5 && validate(email)
+
   const handleHistory = () => {
     if(history !== undefined){
       history.push('/welcome')}
@@ -20,6 +32,7 @@ const LoginForm = () => {
   return (
     <div className='form'>
       <form>
+        {checkUser.password !== md5(password) && (<p>Senha de administrador incorreta</p>)}
         <h1>Login</h1>
         
         {message && <div className='messageUser'>

@@ -1,25 +1,26 @@
 {
-    "users": [
-      {
-        "nome": "joao",
-        "email": "exemple@exemple.com",
-        "permissao": "administrador",
-        "status": "ativo",
-        "id": "1"
-      },
-      {
-        "nome": "joao",
-        "email": "exemple@exemple.com",
-        "permissao": "administrador",
-        "status": "ativo",
-        "id": "2"
-      },
-      {
-        "nome": "joao",
-        "email": "exemple@exemple.com",
-        "permissao": "administrador",
-        "status": "ativo",
-        "id": "3"
-      }
-     ]
-  }
+  "users": [
+    {
+      "nome": "João",
+      "email": "joao@example.com",
+      "permissao": "Administrador",
+      "status": "Ativo",
+      "password": "e10adc3949ba59abbe56e057f20f883e",
+      "id": "1"
+    },
+    {
+      "nome": "Maria",
+      "email": "maria@example.com",
+      "permissao": "Usuário",
+      "status": "Ativo",
+      "id": "2"
+    },
+    {
+      "nome": "Amanda",
+      "email": "amanda@example.com",
+      "permissao": "Usuário",
+      "status": "Ativo",
+      "id": "3"
+    }
+  ]
+}

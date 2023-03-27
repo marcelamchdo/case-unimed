@@ -27,7 +27,6 @@ const RegisterForm = () => {
     history.push('/')
   }
 
-
   return (
     <div className='form'>
       <form onSubmit={handleSubmit}>
