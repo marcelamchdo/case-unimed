@@ -9,6 +9,7 @@ const Users = () => {
   const [showAlert, setShowAlert] = useState(false)
   const [id, setId] = useState('')
   const query = useSelector((state) => state.user.query)
+  const [showOverlay, setShowOverlay] = useState(false)
   
   const getUsers = async () => {
     const data = await getAll();
@@ -39,9 +40,12 @@ const Users = () => {
 
   const Alert = () => {
     return (
+      <div className="overlay">
       <div className="alert">
         <svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="#ED752D" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-alert-triangle"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg>
+
         <p className="message">Tem certeza que deseja deletar?</p>
+
         <div className='btnAlert'>
           <button className="btnDelete" onClick={() => handleDelete()}>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="feather feather-trash-2"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path><line x1="10" y1="11" x2="10" y2="17"></line><line x1="14" y1="11" x2="14" y2="17"></line></svg>
@@ -51,6 +55,7 @@ const Users = () => {
           <button className="btnCancel" onClick={() => setShowAlert(false)}>
             <p>Cancelar</p>
           </button>
+        </div>
         </div>
       </div>
     );
@@ -62,6 +67,7 @@ const handleDelete = async () => {
     await deleteById(id);
     setShowAlert(false)
 }
+
 
   return (
     <div>
